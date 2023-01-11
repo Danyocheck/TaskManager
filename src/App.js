@@ -5,11 +5,7 @@ import Context from './context'
 import AddTasks from './Task/AddTasks'
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {id: 1, completed: false, task: 'подготовиться к осям'},
-    {id: 2, completed: false, task: 'подготовиться к матану'},
-    {id: 3, completed: false, task: 'подготовиться к физике'},
-  ])
+  const [tasks, setTasks] = useState([])
 
   function toggleTodo(id) {
     setTasks(
