@@ -17,3 +17,11 @@ code {
   margin: 0 auto;
   width: 600px;
 }
+
+.rm {
+  padding: 1px
+}
+
+.done {
+  background-color: green;
+}

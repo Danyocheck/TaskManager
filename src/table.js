@@ -98,7 +98,7 @@ function Table() {
       ) :
         <div onClick={() => setIsEdit(true)}></div>
       }
-      <button style={style} onClick={handleClick}>+</button>
+      <button>+</button>
     </div>
   );
 }

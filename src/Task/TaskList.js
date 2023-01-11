@@ -6,7 +6,11 @@ function TaskList(props) {
         <div>
             {props.tasks.map(tasks => {
                 return (
-                    <TaskViewer tasks={tasks} key={tasks.id}/>
+                    <TaskViewer
+                        tasks={tasks}
+                        key={tasks.id}
+                        onChange={props.onToggle}
+                    />
                 )
             })}
         </div>
