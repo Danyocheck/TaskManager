@@ -9,7 +9,8 @@ const styles = {
         padding: '.5rem 1rem',
         border: '1px solid #ccc',
         borderRadius: '4px',
-        marginBottom: '.5rem'
+        marginBottom: '.5rem',
+        cursor: 'grab'
     },
     input: {
         marginRight: '1rem',
@@ -17,7 +18,7 @@ const styles = {
     },
 }
 
-function TaskViewer({ tasks, onChange }) {
+function TaskViewer({ tasks, onChange, dragStartHandler, dragLeaveHandler, dragEndHandler, dragOverHandler, dragDrop }) {
     const {removeTask} = useContext(Context)
     const classes = []
 
@@ -26,7 +27,15 @@ function TaskViewer({ tasks, onChange }) {
     }
 
     return (
-        <span className={classes.join(' ')} style={styles.span}>
+        <span
+            onDragStart={e => dragStartHandler(e, tasks)}  // схватили
+            onDragLeave={e => dragLeaveHandler(e)} // вышли за границы области над которой держали объект
+            onDragEnd={e => dragEndHandler(e)} // отпустили
+            onDragOver={e => dragOverHandler(e)} // нааходимся над другим объектом
+            onDrop={e => dragDrop(e, tasks)} // отпустили карточку, хотим чтобы произошло какое-то связанное с этим действие
+            className={classes.join(' ')}
+            style={styles.span}
+            draggable={true}>
             <p>{tasks.task}</p>
             <div>
                 <input

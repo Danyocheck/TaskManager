@@ -39,7 +39,7 @@ function App() {
       <div className='wrapper'>
         <h1>Таск менеджер</h1>
         <AddTasks onCreate={addTask}/>
-        <TaskList tasks={tasks} onToggle={toggleTodo}/>
+        <TaskList tasks={tasks} onToggle={toggleTodo} setTasks={setTasks}/>
       </div>
     </Context.Provider>
   )
