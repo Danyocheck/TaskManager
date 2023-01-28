@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import TaskList from './Task/TaskList'
-import Context from '../context'
-import AddTasks from './Task/AddTasks'
+import TaskList from './TaskList'
+import Context from '../../context'
+import AddTasks from './AddTasks'
 
 function TaskManager() {
   const [tasks, setTasks] = useState([])
